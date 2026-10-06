@@ -1,0 +1,15 @@
+{
+	"name": "adf-vbpractise11",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cc82747d-64cf-462e-bc22-c8b1f5742178",
+		"tenantId": "1f612e6f-1200-4bc7-b63b-5c05e3c73db8"
+	}
+}
