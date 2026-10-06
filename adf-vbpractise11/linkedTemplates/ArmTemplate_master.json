@@ -1,0 +1,196 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-vbpractise11"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureFunctionRestApi_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunctionRestApi'"
+		},
+		"SqlServer1_ls_sink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1_ls_sink'"
+		},
+		"SqlServer_src_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer_src'"
+		},
+		"adls_ls_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_ls_source'"
+		},
+		"ls_adls_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_sink'"
+		},
+		"ls_adls_src_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_src'"
+		},
+		"ls_csvempty_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_csvempty'"
+		},
+		"ls_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_sink'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"AzureFunctionRestApi_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://vbfunctionapp-ejhqaucrebhbbvad.westus3-01.azurewebsites.net"
+		},
+		"SqlServer1_ls_sink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "RAJESH\\SQLEXPRESS"
+		},
+		"SqlServer1_ls_sink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"SqlServer1_ls_sink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
+		},
+		"SqlServer_src_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "RAJESH\\SQLEXPRESS"
+		},
+		"SqlServer_src_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"SqlServer_src_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
+		},
+		"adls_ls_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_adls_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_adls_src_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_csvempty_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adls2sinkvbpractise.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-vbpractise11_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureFunctionRestApi_functionKey": {
+						"value": "[parameters('AzureFunctionRestApi_functionKey')]"
+					},
+					"adls_ls_source_accountKey": {
+						"value": "[parameters('adls_ls_source_accountKey')]"
+					},
+					"ls_adls_sink_accountKey": {
+						"value": "[parameters('ls_adls_sink_accountKey')]"
+					},
+					"ls_adls_src_accountKey": {
+						"value": "[parameters('ls_adls_src_accountKey')]"
+					},
+					"ls_csvempty_accountKey": {
+						"value": "[parameters('ls_csvempty_accountKey')]"
+					},
+					"ls_sink_accountKey": {
+						"value": "[parameters('ls_sink_accountKey')]"
+					},
+					"SqlServer1_ls_sink_password": {
+						"value": "[parameters('SqlServer1_ls_sink_password')]"
+					},
+					"SqlServer_src_password": {
+						"value": "[parameters('SqlServer_src_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureFunctionRestApi_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunctionRestApi_properties_typeProperties_functionAppUrl')]"
+					},
+					"adls_ls_source_properties_typeProperties_url": {
+						"value": "[parameters('adls_ls_source_properties_typeProperties_url')]"
+					},
+					"ls_adls_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_sink_properties_typeProperties_url')]"
+					},
+					"ls_adls_src_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_src_properties_typeProperties_url')]"
+					},
+					"ls_csvempty_properties_typeProperties_url": {
+						"value": "[parameters('ls_csvempty_properties_typeProperties_url')]"
+					},
+					"ls_sink_properties_typeProperties_url": {
+						"value": "[parameters('ls_sink_properties_typeProperties_url')]"
+					},
+					"SqlServer1_ls_sink_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_ls_sink_properties_typeProperties_server')]"
+					},
+					"SqlServer1_ls_sink_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_ls_sink_properties_typeProperties_database')]"
+					},
+					"SqlServer1_ls_sink_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_ls_sink_properties_typeProperties_userName')]"
+					},
+					"SqlServer_src_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer_src_properties_typeProperties_server')]"
+					},
+					"SqlServer_src_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer_src_properties_typeProperties_database')]"
+					},
+					"SqlServer_src_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer_src_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

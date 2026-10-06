@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-vbpractise11"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureFunctionRestApi_functionKey": {
+			"value": ""
+		},
+		"SqlServer1_ls_sink_password": {
+			"value": ""
+		},
+		"SqlServer_src_password": {
+			"value": ""
+		},
+		"adls_ls_source_accountKey": {
+			"value": ""
+		},
+		"ls_adls_sink_accountKey": {
+			"value": ""
+		},
+		"ls_adls_src_accountKey": {
+			"value": ""
+		},
+		"ls_csvempty_accountKey": {
+			"value": ""
+		},
+		"ls_sink_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"AzureFunctionRestApi_properties_typeProperties_functionAppUrl": {
+			"value": "https://vbfunctionapp-ejhqaucrebhbbvad.westus3-01.azurewebsites.net"
+		},
+		"SqlServer1_ls_sink_properties_typeProperties_server": {
+			"value": "RAJESH\\SQLEXPRESS"
+		},
+		"SqlServer1_ls_sink_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"SqlServer1_ls_sink_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"SqlServer_src_properties_typeProperties_server": {
+			"value": "RAJESH\\SQLEXPRESS"
+		},
+		"SqlServer_src_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"SqlServer_src_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"adls_ls_source_properties_typeProperties_url": {
+			"value": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_adls_sink_properties_typeProperties_url": {
+			"value": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_adls_src_properties_typeProperties_url": {
+			"value": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_csvempty_properties_typeProperties_url": {
+			"value": "https://adlsvbpractise.dfs.core.windows.net/"
+		},
+		"ls_sink_properties_typeProperties_url": {
+			"value": "https://adls2sinkvbpractise.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
